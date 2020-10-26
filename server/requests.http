@@ -1,0 +1,63 @@
+GET http://localhost:3333/
+
+###
+
+GET http://localhost:3333/health
+
+###
+
+GET http://localhost:3333/items
+
+###
+
+GET http://localhost:3333/points/1
+
+###
+
+GET http://localhost:3333/points?city=Rio%20do%20Sul&uf=SC&items[]=1&items[]=2
+
+###
+
+GET http://localhost:3333/points?city=Rio%20do%20Sul&uf=SC&items[]=3
+
+
+###
+
+GET http://localhost:3333/uploads/lampadas.svg
+
+###
+
+# Criar Ponto de Coleta
+POST http://localhost:3333/points
+Content-Type: application/json
+
+{
+  "name": "Mercado Imperatiz",
+  "email": "contato@imperatriz.com.br",
+  "whatsapp": "47999991234",
+  "latitude": -46.81273213,
+  "longitude": -35.19238112,
+  "city": "Rio do Sul",
+  "uf": "SC",
+  "items": [1, 2, 6]
+}
+
+###
+
+POST http://localhost:3333/points
+Content-Type: application/json
+
+{
+  "name": "Mercado do seu Zé",
+  "email": "contato@imperatriz.com.br",
+  "whatsapp": "47999991234",
+  "latitude": -46.81273213,
+  "longitude": -35.19238112,
+  "city": "Rio do Sul",
+  "uf": "SC",
+  "items": [3, 5]
+}
+
+###
+
+GET http://localhost:3333/points?city=Porto%20Seguro&uf=BA&items[]=1&items[]=2
